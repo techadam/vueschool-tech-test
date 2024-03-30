@@ -5,46 +5,46 @@
 
       <ul class="flex items-center gap-6">
         <li>
-          <nuxt-link to="" class="flex items-end gap-1">
+          <nuxt-link to="/" class="flex items-end gap-1">
             <span>Courses</span>
             <img src="@/assets/icons/arrow-down.svg" />
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="" class="flex items-end gap-1">
+          <nuxt-link to="/" class="flex items-end gap-1">
             <span>Plans</span>
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="" class="flex items-end gap-1">
+          <nuxt-link to="/" class="flex items-end gap-1">
             <span>Business Service</span>
             <img src="@/assets/icons/arrow-down.svg" />
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="" class="flex items-end gap-1">
+          <nuxt-link to="/" class="flex items-end gap-1">
             <span>Learning Paths</span>
             <img src="@/assets/icons/arrow-down.svg" />
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="" class="flex items-end gap-1">
+          <nuxt-link to="/" class="flex items-end gap-1">
             <span>Hiring</span>
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="" class="flex items-end gap-1">
+          <nuxt-link to="/" class="flex items-end gap-1">
             <span>Articles</span>
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="" class="flex items-end gap-1">
+          <nuxt-link to="/" class="flex items-end gap-1">
             <span>Events</span>
             <img src="@/assets/icons/arrow-down.svg" />
           </nuxt-link>
         </li>
         <li>
-          <nuxt-link to="" class="flex items-end gap-1">
+          <nuxt-link to="/" class="flex items-end gap-1">
             <span>Get Certified</span>
           </nuxt-link>
         </li>
