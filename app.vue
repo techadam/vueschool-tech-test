@@ -1,5 +1,5 @@
 <template>
   <div>
-    <NuxtWelcome />
+    <h1 class="bg-brand-primary">Vue school</h1>
   </div>
 </template>
