@@ -219,13 +219,11 @@
       class="ml-6 sm:ml-10 lg:ml-[135px] flex flex-nowrap overflow-hidden mb-44"
     >
       <Flicking
-        :options="{ circularFallback: 'bound', circular: true, autoplay: true }"
+        :options="{ circularFallback: 'linear', bound: true }"
         :plugins="plugins"
         @move-end="onMoveEnd"
       >
-        <work-shop-card :key="1" />
-        <work-shop-card :key="2" />
-        <work-shop-card :key="3" />
+        <work-shop-card v-for="idx in 4" :key="idx" />
       </Flicking>
     </div>
   </section>
