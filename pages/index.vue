@@ -238,9 +238,21 @@ import BoltIcon from "@/assets/icons/bolt.svg";
 import Flicking from "@egjs/vue3-flicking";
 import "@egjs/vue3-flicking/dist/flicking.css";
 import { AutoPlay } from "@egjs/flicking-plugins";
-import { ref } from "vue";
+import { ref, onMounted } from "vue";
 
 const plugins = ref([
   new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false }),
 ]);
+
+const queryHero = groq`{ "hero": *[_type == "hero"] }`;
+const queryLessons = groq`{ "lesson": *[_type == "lesson"] }`;
+const queryBulletpoints = groq`{ "price": *[_type == "price"] }`;
+
+const sanity = useSanity();
+
+const hero = await useAsyncData(() => sanity.fetch(queryHero));
+const lesson = await useAsyncData(() => sanity.fetch(queryLessons));
+const bulletpoints = await useAsyncData(() =>
+  sanity.fetch(queryBulletpoints)
+);
 </script>
