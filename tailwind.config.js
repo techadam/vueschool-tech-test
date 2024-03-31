@@ -9,20 +9,23 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        "brand-black:": "#212435",
+        "brand-black": "#212435",
+        "brand-black2": "#2B2F44",
         "brand-primary": "#0BD88F",
-        "light-yellow": "#FDF9EE",
-        "light-grey": "#F5F5F5",
-        "grey": "#5B6E88",
-        "grey2": "#2c364c",
-        "grey3": "#8F8F8F",
-        "brand-black2:": "#292C26",
-        "brand-primary-light": "#FFFCF0",
-        "brand-green": "#089115",
-        "brand-spot": "#ECB20A",
-        "brand-mail": "#EE9430",
-        "brand-red": "#E51A3C",
+        "brand-secondary": "#00C2FF",
+        "light-grey": "#F3F5FF",
+        "brand-purple": "#4F08E6",
+        "brand-red": "#FF4975",
+        "brand-grey": "#737B98",
+        "brand-grey-light": "#A0A8C3"
       },
+      fontSize: {
+        "normal": "16px",
+      },
+      screens: {
+        "xlcustom": "1340px",
+        // => @media (min-width: 1340px) { ... }
+      }
     },
   },
   plugins: [],
