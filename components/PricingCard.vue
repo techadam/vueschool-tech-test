@@ -11,47 +11,45 @@
       </p>
 
       <ul class="mb-6">
-        <li class="flex gap-1 justify-between items-center mb-4">
+        <li
+          :class="[
+            'flex gap-1 justify-between items-center mb-4',
+            point.enabled ? '' : 'opacity-20',
+          ]"
+          v-for="point in generalPoints?.points"
+        >
           <div class="flex gap-3 items-center">
-            <img src="@/assets/icons/check.svg" />
-            <span class="text-[14px] text-light-grey" alt="Check icon"
-              >All Video Courses
+            <img src="@/assets/icons/check.svg" v-if="point?.enabled" />
+            <img src="@/assets/icons/cancel.svg" v-else />
+            <span
+              :class="[
+                'text-[14px] text-light-grey',
+                point?.bold ? 'font-bold' : '',
+              ]"
+              alt="Check icon"
+              >{{ point.title }}
             </span>
           </div>
           <img src="@/assets/icons/info.svg" alt="Info icon" />
         </li>
-        <li class="flex gap-1 justify-between items-center mb-4">
+
+        <li
+          :class="[
+            'flex gap-1 justify-between items-center mb-4',
+            point.enabled ? '' : 'opacity-20',
+          ]"
+          v-for="point in typePoints?.points"
+        >
           <div class="flex gap-3 items-center">
-            <img src="@/assets/icons/check.svg" />
-            <span class="text-[14px] text-light-grey" alt="Check icon"
-              >Vue.Js Master class
-            </span>
-          </div>
-          <img src="@/assets/icons/info.svg" alt="Info icon" />
-        </li>
-        <li class="flex gap-1 justify-between items-center mb-4">
-          <div class="flex gap-3 items-center">
-            <img src="@/assets/icons/check.svg" />
-            <span class="text-[14px] text-light-grey" alt="Check icon"
-              >Developer assist Slack channel
-            </span>
-          </div>
-          <img src="@/assets/icons/info.svg" alt="Info icon" />
-        </li>
-        <li class="flex gap-1 justify-between items-center mb-4 opacity-20">
-          <div class="flex gap-3 items-center">
-            <img src="@/assets/icons/check.svg" />
-            <span class="text-[14px] text-light-grey" alt="Check icon"
-              >Live Weekly QnA
-            </span>
-          </div>
-          <img src="@/assets/icons/info.svg" alt="Info icon" />
-        </li>
-        <li class="flex gap-1 justify-between items-center mb-4 opacity-20">
-          <div class="flex gap-3 items-center">
-            <img src="@/assets/icons/check.svg" />
-            <span class="text-[14px] text-light-grey" alt="Check icon"
-              >1 x ws ticket per license
+            <img src="@/assets/icons/check.svg" v-if="point?.enabled" />
+            <img src="@/assets/icons/cancel.svg" v-else />
+            <span
+              :class="[
+                'text-[14px] text-light-grey',
+                point?.bold ? 'font-bold' : '',
+              ]"
+              alt="Check icon"
+              >{{ point.title }}
             </span>
           </div>
           <img src="@/assets/icons/info.svg" alt="Info icon" />
@@ -118,8 +116,25 @@
 </template>
 
 <script setup>
-defineProps({
+import { ref, computed } from "vue";
+const props = defineProps({
   title: { type: String },
   icon: { type: String },
+  bulletpoints: {
+    type: Array,
+  },
+  subType: {
+    type: String,
+  },
+});
+
+const generalPoints = computed(() => {
+  if (!props.bulletpoints.length) return [];
+  return props.bulletpoints.filter((item) => item.name == "all")[0];
+});
+
+const typePoints = computed(() => {
+  if (!props.bulletpoints.length) return [];
+  return props.bulletpoints.filter((item) => item.name == props.subType)[0];
 });
 </script>

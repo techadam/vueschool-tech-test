@@ -5,28 +5,17 @@
     >
       <div class="pt-8 md:text-left text-center">
         <!-- Please note that the custom class here header-title is using applied tailwind styles see style.css -->
-        <h1 class="header-title">
-          Complete <span class="text-brand-primary">Vue.js</span>
-          <br class="hidden md:inline-block" />
-          <span class="text-brand-primary">training</span> solutions
-          <br class="hidden md:inline-block" />
-          for companies
-        </h1>
+        <h1 class="header-title" v-html="heroContent?.title"></h1>
 
         <p
           class="my-10 text-[16px] sm:text-[22px] text-light-grey leading-[30px]"
-        >
-          Training solutions designed for companies, agencies
-          <br class="hidden md:inline-block" />
-          and organisations with developers using or who are
-          <br class="hidden md:inline-block" />
-          considering using the Vue.js framework
-        </p>
+          v-html="heroContent?.desc"
+        ></p>
 
         <button
           class="bg-brand-primary py-5 px-10 text-brand-black rounded-[10px] font-medium"
         >
-          Talk to Sales
+          {{ heroContent?.cta }}
         </button>
       </div>
 
@@ -117,7 +106,7 @@
             <h2
               class="text-[64px] sm:text-[90px] leading-[75.84px] sm:leading-[106.65px] text-brand-primary font-medium mb-1"
             >
-              763
+              {{ lessonContent?.numberOfLesson }}
             </h2>
             <div class="flex items-center justify-center gap-1 sm:gap-2">
               <img src="@/assets/icons/play.svg" alt="" />
@@ -129,7 +118,7 @@
             <h2
               class="text-[64px] sm:text-[90px] leading-[75.84px] sm:leading-[106.65px] text-brand-primary font-medium mb-1"
             >
-              40
+              {{ lessonContent?.numberOfCourses }}
             </h2>
             <div class="flex items-center justify-center gap-1 sm:gap-2">
               <img src="@/assets/icons/book.svg" alt="" />
@@ -141,7 +130,7 @@
             <h2
               class="text-[64px] sm:text-[90px] leading-[75.84px] sm:leading-[106.65px] text-brand-primary font-medium mb-1"
             >
-              64
+              {{ lessonContent?.numberOfHours }}
             </h2>
             <div class="flex items-center justify-center gap-1 sm:gap-2">
               <img src="@/assets/icons/clock.svg" alt="" />
@@ -179,8 +168,8 @@
       <div
         class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-start gap-[30px] mx-6 sm:mx-10 lg:mx-[135px] z-3 relative pt-48"
       >
-        <pricing-card title="Basic" :icon="LeafIcon" />
-        <pricing-card title="Professional" :icon="RocketIcon">
+        <pricing-card title="Basic" :icon="LeafIcon" subType="basic" :bulletpoints="bulletpointsContent" />
+        <pricing-card title="Professional" :icon="RocketIcon" subType="professional" :bulletpoints="bulletpointsContent">
           <template #extra>
             <div
               class="rounded-2xl p-6 mb-6 bg-brand-primary/20 flex gap-3 items-center"
@@ -198,7 +187,7 @@
             </div>
           </template>
         </pricing-card>
-        <pricing-card title="Basic" :icon="BoltIcon" />
+        <pricing-card title="Basic" :icon="BoltIcon" subType="premium" :bulletpoints="bulletpointsContent" />
       </div>
     </div>
   </section>
@@ -238,7 +227,7 @@ import BoltIcon from "@/assets/icons/bolt.svg";
 import Flicking from "@egjs/vue3-flicking";
 import "@egjs/vue3-flicking/dist/flicking.css";
 import { AutoPlay } from "@egjs/flicking-plugins";
-import { ref, onMounted } from "vue";
+import { ref, computed } from "vue";
 
 const plugins = ref([
   new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false }),
@@ -252,7 +241,33 @@ const sanity = useSanity();
 
 const hero = await useAsyncData(() => sanity.fetch(queryHero));
 const lesson = await useAsyncData(() => sanity.fetch(queryLessons));
-const bulletpoints = await useAsyncData(() =>
-  sanity.fetch(queryBulletpoints)
-);
+const bulletpoints = await useAsyncData(() => sanity.fetch(queryBulletpoints));
+
+const heroContent = computed(() => {
+  const content = hero?.data?._value?.hero[0];
+  const title = content?.heroTitle[0]?.children[0]?.text;
+  const desc = content?.heroDesc[0]?.children[0]?.text;
+
+  return {
+    title,
+    desc,
+    cta: content?.heroCta,
+  };
+});
+
+const lessonContent = computed(() => {
+  const { _type, _key, ...data } = lesson?.data?._value?.lesson[0]?.example[0];
+  return data || {};
+});
+
+const bulletpointsContent = computed(() => {
+  const content = bulletpoints?.data?._value?.price;
+  const bullets = content?.map((item) => {
+    return {
+      name: item?.name.toLowerCase(),
+      points: item?.example,
+    };
+  });
+  return bullets;
+});
 </script>
