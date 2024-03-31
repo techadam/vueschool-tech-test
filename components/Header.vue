@@ -1,9 +1,15 @@
 <template>
-  <header class="py-[20px] px-[48px] text-light-grey text-normal">
+  <header class="py-5 px-6 sm:px-12 text-light-grey text-normal">
     <nav class="flex justify-between items-center">
-      <img src="@/assets/images/logo.png" class="w-[170px]" />
+      <div class="flex items-center">
+        <img
+          src="@/assets/icons/bars.svg"
+          class="mr-3 inline-block xl:hidden w-[26px]"
+        />
+        <img src="@/assets/images/logo.png" class="w-[170px]" />
+      </div>
 
-      <ul class="flex items-center gap-6">
+      <ul class="hidden xl:flex items-center gap-6">
         <li>
           <nuxt-link to="/" class="flex items-end gap-1">
             <span>Courses</span>
@@ -50,13 +56,14 @@
         </li>
       </ul>
 
-      <div class="flex items-center gap-6">
+      <div class="hidden sm:flex items-center gap-6">
         <nuxt-link to="/" class="inline-block text-white">Log in</nuxt-link>
-        <nuxt-link
+        <button
           to="/"
           class="inline-block py-[20px] px-[40px] rounded-[10px] border-2 border-brand-primary"
-          >Sign up</nuxt-link
         >
+          Sign up
+        </button>
       </div>
     </nav>
   </header>

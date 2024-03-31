@@ -1,17 +1,25 @@
 <template>
   <section id="hero relative">
-    <div class="flex items-center gap-[50px] ml-[135px]">
-      <div class="pt-8">
+    <div
+      class="flex justify-center lg:justify-normal items-center gap-[50px] mx-6 sm:mx-10 lg:ml-[135px] md:mr-0 flex-wrap"
+    >
+      <div class="pt-8 md:text-left text-center">
         <!-- Please note that the custom class here header-title is using applied tailwind styles see style.css -->
         <h1 class="header-title">
-          Complete <span class="text-brand-primary">Vue.js</span> <br />
-          <span class="text-brand-primary">training</span> solutions <br />
+          Complete <span class="text-brand-primary">Vue.js</span>
+          <br class="hidden md:inline-block" />
+          <span class="text-brand-primary">training</span> solutions
+          <br class="hidden md:inline-block" />
           for companies
         </h1>
 
-        <p class="my-10 text-[22px] text-light-grey leading-[30px]">
-          Training solutions designed for companies, agencies <br />
-          and organisations with developers using or who are <br />
+        <p
+          class="my-10 text-[16px] sm:text-[22px] text-light-grey leading-[30px]"
+        >
+          Training solutions designed for companies, agencies
+          <br class="hidden md:inline-block" />
+          and organisations with developers using or who are
+          <br class="hidden md:inline-block" />
           considering using the Vue.js framework
         </p>
 
@@ -24,7 +32,7 @@
 
       <img
         src="@/assets/images/hero.png"
-        class="ml-28 justify-self-end"
+        class="ml-0 lg:ml-28 justify-self-end"
         alt=""
       />
     </div>
@@ -44,17 +52,25 @@
         alt=""
       />
 
-      <div class="mx-[135px] relative z-4 pt-[136px]">
+      <div class="mx-6 sm:mx-10 lg:mx-[135px] relative z-4 pt-[136px]">
         <div
-          class="rounded-3xl p-10 flex gap-10 items-center bg-brand-black2/90 mb-16"
+          class="rounded-3xl p-6 md:p-10 flex flex-wrap sm:flex-nowrap justify-center sm:justify-normal gap-4 md:gap-10 items-start md:items-center bg-brand-black2/90 mb-16"
         >
-          <img src="@/assets/images/logoicon.png" class="w-[280px]" alt="" />
+          <img
+            src="@/assets/images/logoicon.png"
+            class="w-[85px] lg:w-[280px] sm:w-[152px]"
+            alt=""
+          />
 
-          <div class="w-auto">
-            <h1 class="mb-5 font-bold text-[40px] text-white">
+          <div class="w-auto text-center sm:text-left">
+            <h1
+              class="mb-5 font-bold text-[24px] sm:text-[32px] md:text-[40px] text-white"
+            >
               About Vue School corporate training
             </h1>
-            <p class="text-[22px] leading-[30px] text-light-grey">
+            <p
+              class="text-[14px] sm:text-[18px] lg:text-[22px] leading-[30px] text-light-grey"
+            >
               School is the #1 training resource for Vue.js and has provided the
               most comprehensive Vue.js video library in the world to over
               140,000 developers. Private individuals and small to enterprise
@@ -64,7 +80,7 @@
           </div>
         </div>
 
-        <div class="flex items-center justify-between flex-wrap">
+        <div class="hidden md:flex items-center justify-between flex-wrap">
           <img src="@/assets/images/brand.png" alt="" />
           <img src="@/assets/images/brand.png" alt="" />
           <img src="@/assets/images/brand.png" alt="" />
@@ -75,31 +91,35 @@
       </div>
     </div>
 
-    <div class="relative z-2 mx-[135px] mt-40">
+    <div
+      class="relative z-2 mx-10 md:mx-[135px] mt-40 text-center md:text-left"
+    >
       <small
-        class="block uppercase mb-3 text-[24px] leading-[28.44px] text-brand-primary"
+        class="block uppercase mb-3 text-[16px] sm:text-[24px] leading-[28.44px] text-brand-primary"
         >YOUR #1 SOURCE OF VUE.JS COURSES</small
       >
-      <div class="flex items-center justify-between">
-        <div>
+      <div
+        class="flex items-center justify-center md:justify-between flex-wrap"
+      >
+        <div class="mb-6 sm:mb-2">
           <h2 class="header-title">
             Full Stack
             <span class="text-brand-primary"
-              >Vue <br />
+              >Vue <br class="hidden sm:inline-block" />
               Training
             </span>
             Solutions
           </h2>
         </div>
 
-        <div class="flex justify-between gap-[61px] flex-nowrap">
+        <div class="flex justify-between gap-3 sm:gap-[61px] flex-nowrap">
           <div class="text-center">
             <h2
-              class="text-[90px] leading-[106.65px] text-brand-primary font-medium mb-1"
+              class="text-[64px] sm:text-[90px] leading-[75.84px] sm:leading-[106.65px] text-brand-primary font-medium mb-1"
             >
               763
             </h2>
-            <div class="flex items-center justify-center gap-2">
+            <div class="flex items-center justify-center gap-1 sm:gap-2">
               <img src="@/assets/icons/play.svg" alt="" />
               <small class="text-[14px] text-light-grey">Video lessons</small>
             </div>
@@ -107,11 +127,11 @@
 
           <div class="text-center">
             <h2
-              class="text-[90px] leading-[106.65px] text-brand-primary font-medium mb-1"
+              class="text-[64px] sm:text-[90px] leading-[75.84px] sm:leading-[106.65px] text-brand-primary font-medium mb-1"
             >
               40
             </h2>
-            <div class="flex items-center justify-center gap-2">
+            <div class="flex items-center justify-center gap-1 sm:gap-2">
               <img src="@/assets/icons/book.svg" alt="" />
               <small class="text-[14px] text-light-grey">Courses</small>
             </div>
@@ -119,11 +139,11 @@
 
           <div class="text-center">
             <h2
-              class="text-[90px] leading-[106.65px] text-brand-primary font-medium mb-1"
+              class="text-[64px] sm:text-[90px] leading-[75.84px] sm:leading-[106.65px] text-brand-primary font-medium mb-1"
             >
               64
             </h2>
-            <div class="flex items-center justify-center gap-2">
+            <div class="flex items-center justify-center gap-1 sm:gap-2">
               <img src="@/assets/icons/clock.svg" alt="" />
               <small class="text-[14px] text-light-grey">15 Hours</small>
             </div>
@@ -134,10 +154,10 @@
   </section>
 
   <section id="pricing" class="pt-44">
-    <h1 class="text-center header-title font-bold relative">
+    <h1 class="text-center header-title font-bold relative mx-6 sm:mx-auto">
       Discounted
       <span class="text-brand-secondary"
-        >Corporate <br />
+        >Corporate <br class="hidden sm:inline-block" />
         Training</span
       >
       Bundles
@@ -157,7 +177,7 @@
       />
 
       <div
-        class="grid grid-cols-3 items-start gap-[30px] mx-[135px] z-3 relative pt-48"
+        class="grid grid-cols-1 lg:grid-cols-2 xl:grid-cols-3 items-start gap-[30px] mx-6 sm:mx-10 lg:mx-[135px] z-3 relative pt-48"
       >
         <pricing-card title="Basic" :icon="LeafIcon" />
         <pricing-card title="Professional" :icon="RocketIcon">
@@ -184,7 +204,9 @@
   </section>
 
   <section id="workshop pt-40">
-    <div class="mx-[135px] flex justify-between items-center mt-20 mb-[72px]">
+    <div
+      class="mx-10 md:mx-[135px] flex justify-between items-center mt-20 mb-[72px] flex-wrap"
+    >
       <h1 class="header-title">Available Workshops</h1>
       <button
         class="bg-brand-primary py-5 px-10 text-brand-black rounded-[10px] font-medium"
@@ -193,7 +215,7 @@
       </button>
     </div>
 
-    <div class="ml-[135px] flex flex-nowrap overflow-hidden mb-44">
+    <div class="ml-[40px] md:ml-[135px] flex flex-nowrap overflow-hidden mb-44">
       <work-shop-card />
       <work-shop-card />
       <work-shop-card />

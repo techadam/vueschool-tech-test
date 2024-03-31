@@ -22,6 +22,10 @@ module.exports = {
       fontSize: {
         "normal": "16px",
       },
+      screens: {
+        "xl-custom": "1381px",
+        // => @media (min-width: 1280px) { ... }
+      }
     },
   },
   plugins: [],

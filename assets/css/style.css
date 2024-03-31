@@ -11,6 +11,6 @@
 
 @layer components {
   .header-title {
-    @apply text-[60px] font-bold leading-[71.1px] text-white;
+    @apply text-[40px] sm:text-[60px] font-bold leading-[47.4px] sm:leading-[71.1px] text-white;
   }
 }
