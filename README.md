@@ -1,6 +1,6 @@
-# Nuxt 3 Minimal Starter
+# Vueschool Frontend test
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+See demo here link to the deployed version of the project [Click to view demo](https://vueschool-test.netlify.app/)
 
 ## Setup
 
@@ -37,6 +37,12 @@ yarn dev
 # bun
 bun run dev
 ```
+
+## Updating Page Content with Sanity CMS Dashboard
+
+To update the landing page content, you can follow the steps in the video. See video link below.
+
+View video tutorial [Click to watch](https://www.loom.com/share/ff83242f562b454a9d39edbf1b656c64?sid=237cdd7e-65c7-4740-b277-0c9a2091dd06).
 
 ## Production
 
