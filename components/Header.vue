@@ -4,12 +4,12 @@
       <div class="flex items-center">
         <img
           src="@/assets/icons/bars.svg"
-          class="mr-3 inline-block xl:hidden w-[26px]"
+          class="mr-4 sm:mr-3 inline-block xl:hidden w-[26px]"
         />
         <img src="@/assets/images/logo.png" class="w-[170px]" />
       </div>
 
-      <ul class="hidden xl:flex items-center gap-6">
+      <ul class="hidden xlcustom:flex items-center gap-6">
         <li>
           <nuxt-link to="/" class="flex items-end gap-1">
             <span>Courses</span>

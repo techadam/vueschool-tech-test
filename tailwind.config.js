@@ -23,8 +23,8 @@ module.exports = {
         "normal": "16px",
       },
       screens: {
-        "xl-custom": "1381px",
-        // => @media (min-width: 1280px) { ... }
+        "xlcustom": "1340px",
+        // => @media (min-width: 1340px) { ... }
       }
     },
   },
