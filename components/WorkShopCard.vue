@@ -1,5 +1,5 @@
 <template>
-  <div class="rounded-3xl overflow-hidden min-w-[570px] mr-[30px]">
+  <div class="rounded-3xl overflow-hidden w-[345px] sm:w-[570px] mr-[30px]">
     <div
       class="py-6 px-9 flex items-center gap-3 bg-gradient-to-r from-brand-purple to-brand-red"
     >

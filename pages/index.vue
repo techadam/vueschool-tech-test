@@ -205,7 +205,7 @@
 
   <section id="workshop pt-40">
     <div
-      class="mx-10 md:mx-[135px] flex justify-between items-center mt-20 mb-[72px] flex-wrap"
+      class="mx-6 sm:mx-10 lg:mx-[135px] flex justify-between items-center mt-20 mb-[72px] flex-wrap"
     >
       <h1 class="header-title">Available Workshops</h1>
       <button
@@ -215,10 +215,18 @@
       </button>
     </div>
 
-    <div class="ml-[40px] md:ml-[135px] flex flex-nowrap overflow-hidden mb-44">
-      <work-shop-card />
-      <work-shop-card />
-      <work-shop-card />
+    <div
+      class="ml-6 sm:ml-10 lg:ml-[135px] flex flex-nowrap overflow-hidden mb-44"
+    >
+      <Flicking
+        :options="{ circularFallback: 'bound', circular: true, autoplay: true }"
+        :plugins="plugins"
+        @move-end="onMoveEnd"
+      >
+        <work-shop-card :key="1" />
+        <work-shop-card :key="2" />
+        <work-shop-card :key="3" />
+      </Flicking>
     </div>
   </section>
 </template>
@@ -229,5 +237,12 @@ import WorkShopCard from "~/components/WorkShopCard.vue";
 import LeafIcon from "@/assets/icons/leaf.svg";
 import RocketIcon from "@/assets/icons/rocket-launch.svg";
 import BoltIcon from "@/assets/icons/bolt.svg";
+import Flicking from "@egjs/vue3-flicking";
+import "@egjs/vue3-flicking/dist/flicking.css";
+import { AutoPlay } from "@egjs/flicking-plugins";
 import { ref } from "vue";
+
+const plugins = ref([
+  new AutoPlay({ duration: 2000, direction: "NEXT", stopOnHover: false }),
+]);
 </script>
